@@ -65,4 +65,12 @@ public class InstrumentController {
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @GetMapping("GetByInstrumentAndBrand/{instrument}/{brand}")
+    public ResponseEntity<Instrument> findByInstrumentAndBrand(@PathVariable("instrument") String instrument,@PathVariable("brand") String brand){
+
+        Instrument response = instrumentService.findByInstrumentAndBrand(instrument,brand);
+
+        return new ResponseEntity<>(response,HttpStatus.OK);
+    }
 }

@@ -58,4 +58,9 @@ public class InstrumentService {
 
         instrumentRepository.deleteById(id);
     }
+
+    public Instrument findByInstrumentAndBrand(String instrument,String brand){
+
+        return  instrumentRepository.findByInstrumentAndBrand(instrument,brand);
+    }
 }
