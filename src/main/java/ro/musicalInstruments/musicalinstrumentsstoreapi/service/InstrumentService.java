@@ -63,4 +63,9 @@ public class InstrumentService {
 
         return  instrumentRepository.findByInstrumentAndBrand(instrument,brand);
     }
+
+    public Page<Instrument> findByPartialName(Pageable pageable){
+
+        return instrumentRepository.findByPartialBrand(pageable);
+    }
 }
