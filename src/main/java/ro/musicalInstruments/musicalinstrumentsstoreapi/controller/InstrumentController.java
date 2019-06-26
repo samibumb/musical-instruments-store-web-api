@@ -66,10 +66,17 @@ public class InstrumentController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("GetByInstrumentAndBrand/{instrument}/{brand}")
+    @GetMapping("getByInstrumentAndBrand/{instrument}/{brand}")
     public ResponseEntity<Instrument> findByInstrumentAndBrand(@PathVariable("instrument") String instrument,@PathVariable("brand") String brand){
 
         Instrument response = instrumentService.findByInstrumentAndBrand(instrument,brand);
+
+        return new ResponseEntity<>(response,HttpStatus.OK);
+    }
+    @GetMapping(value = "getAllFirstCharY")
+    public ResponseEntity<Page<Instrument>> getFirstCharY(Pageable pageable){
+
+       Page<Instrument> response = instrumentService.findByPartialName(pageable);
 
         return new ResponseEntity<>(response,HttpStatus.OK);
     }
