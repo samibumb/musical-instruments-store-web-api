@@ -31,8 +31,18 @@ public class InstrumentService {
     public Instrument createInstrument(InstrumentDto instrumentDto){
         LOGGER.info("Creating instrument {}",instrumentDto);
 
+        //short way for creating an instrument
         Instrument instrument=objectMapper.convertValue(instrumentDto,Instrument.class);
 
+            //another way for creating instrument
+   /**     Instrument instrument1 = new Instrument();
+     *     instrument1.setInstrument(instrumentDto.getInstrument());
+     *     instrument1.setBrand(instrumentDto.getBrand());
+     *     instrument1.setModel(instrumentDto.getModel());
+     *     instrument1.setDescription(instrumentDto.getDescription());
+     *     instrument1.setPrice(instrumentDto.getPrice());
+     *     return instrumentRepository.save(instrument1);
+     */
        return instrumentRepository.save(instrument);
     }
 
