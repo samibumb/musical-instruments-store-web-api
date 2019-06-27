@@ -1,6 +1,7 @@
 package ro.musicalInstruments.musicalinstrumentsstoreapi.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -26,6 +27,7 @@ public class Instrument {
 
     @NotNull
     @Column(name = "Price")
+    @Min(0)
     private Double price;
 
     @NotNull
