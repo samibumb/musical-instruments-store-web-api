@@ -14,15 +14,15 @@ public class Instrument {
     private Long id;
 
     @NotNull
-    @Column(name = "Instrument")
+    @Column(name = "Instrument",length = 45)
     private String instrument;
 
     @NotNull
-    @Column(name = "Brand")
+    @Column(name = "Brand",length = 50)
     private String brand;
 
     @NotNull
-    @Column(name = "Model")
+    @Column(name = "Model",length = 30)
     private String model;
 
     @NotNull
