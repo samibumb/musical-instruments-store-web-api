@@ -9,23 +9,30 @@ public class Instrument {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
     private Long id;
 
     @NotNull
+    @Column(name = "Instrument")
     private String instrument;
 
     @NotNull
+    @Column(name = "Brand")
     private String brand;
 
     @NotNull
+    @Column(name = "Model")
     private String model;
 
     @NotNull
+    @Column(name = "Price")
     private Double price;
 
     @NotNull
+    @Column(name = "Description")
     private String description;
 
+    @Column(name = "Image")
     private String imagePath;
 
     public Long getId() {
